@@ -38,4 +38,19 @@ defmodule Trivial do
     |> Enum.sum
     |> is_very_even
   end
+
+  @doc """
+  Codewars kata: Get 'extra perfect' numbers, that have first and last bit set -> any odd number
+
+  ## Examples
+
+    iex> Trivial.extra_perfect(3)
+    [1, 3]
+  """
+  @spec extra_perfect(integer) :: list
+  def extra_perfect(n) do
+    Enum.to_list(1..n)
+    |> Enum.filter(fn x -> rem(x, 2) == 1 end)
+  end
+
 end
