@@ -48,9 +48,6 @@ defmodule Trivial do
     [1, 3]
   """
   @spec extra_perfect(integer) :: list
-  def extra_perfect(n) do
-    Enum.to_list(1..n)
-    |> Enum.filter(fn x -> rem(x, 2) == 1 end)
-  end
+  def extra_perfect(n), do: Enum.take_every(1..n, 2)
 
 end
