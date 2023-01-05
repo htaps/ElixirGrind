@@ -50,4 +50,27 @@ defmodule Trivial do
   @spec extra_perfect(integer) :: list
   def extra_perfect(n), do: Enum.take_every(1..n, 2)
 
+  @spec filter_odd(any) :: list
+  def filter_odd(nums) do
+    nums
+    |> Enum.filter(fn x -> rem(nums.frequencies(x), 2) == 0 end)
+  end
+
+  @doc """
+  Codewars kata: Add in missing pipes to collect a range from min to max
+
+  ## Examples
+
+    iex> Trivial.fix_pipe([1, 3, 5])
+    [1, 2, 3, 4, 5]
+
+    iex> Trivial.fix_pipe([-1, 6])
+    [-1, 0, 1, 2, 3, 4, 5, 6]
+  """
+  @spec fix_pipe(list) :: list
+  def fix_pipe(pipes) do
+    Enum.min(pipes)..Enum.max(pipes)
+    |> Enum.to_list
+  end
+
 end
