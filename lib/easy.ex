@@ -19,4 +19,19 @@ Easy practices
     |> Enum.join
   end
 
+  @doc """
+  Get area of rectangle or square, from pattern matching chapter.
+
+  ## Examples
+
+    iex> Easy.area({:rectangle, 5, 4})
+    20
+
+    iex> Easy.area({:square, 10})
+    100
+  """
+  @spec area({any, number} | {:rectangle, number, number}) :: number
+  def area({:rectangle, a, b}), do: a * b
+  def area({:square, a}), do: a * a
+
 end
