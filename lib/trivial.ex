@@ -73,4 +73,19 @@ defmodule Trivial do
     |> Enum.to_list
   end
 
+  @doc """
+  Codewars kata: add length to every word as a list of strings
+
+  ## Examples
+
+    iex> Trivial.add_length("Hello Joe")
+    ["Hello 5", "Joe 3"]
+
+  """
+  @spec add_length(binary) :: list
+  def add_length(str) do
+    str
+    |> String.split(" ")
+    |> Enum.map(fn(x) -> "#{x} #{String.length(x)}" end)
+  end
 end
