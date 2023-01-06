@@ -88,4 +88,5 @@ defmodule Trivial do
     |> String.split(" ")
     |> Enum.map(fn(x) -> "#{x} #{String.length(x)}" end)
   end
+
 end
