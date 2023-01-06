@@ -56,4 +56,23 @@ Easy practices
   defp sum_helper(n) do
     1 / (1 + (n - 1) * 3) + sum_helper(n - 1)
   end
+
+  @doc """
+  Codewars kata: A number is strong if the factorial of its digits is the number itself
+  """
+  def strong(n) do
+    if digitize(n) == n, do: "STRONG!!!!", else: "Not Strong !!"
+  end
+
+  defp digitize(n) do
+    n
+    |> Integer.digits
+    |> Enum.map(fn x -> factorial(x) end)
+    |> Enum.sum
+  end
+
+  defp factorial(0), do: 1
+  defp factorial(n) do
+    n * factorial(n - 1)
+  end
 end
