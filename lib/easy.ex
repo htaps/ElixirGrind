@@ -75,4 +75,21 @@ Easy practices
   defp factorial(n) do
     n * factorial(n - 1)
   end
+
+  @doc """
+  Codewars kata: Sum of all natural numbers cubed up to n.
+
+  ## Examples
+
+    iex> Easy.sum_cubes(1)
+    1
+    iex> Easy.sum_cubes(3)
+    36
+  """
+  def sum_cubes(n) do
+    1..n
+    |> Enum.to_list
+    |> Enum.map(fn x -> x * x * x end)
+    |> Enum.sum
+  end
 end
